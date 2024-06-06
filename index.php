@@ -24,12 +24,14 @@ include_once("database.php");
                 </thead>
                 <tbody>
                 <?php
-                $rs = $con->query("SELECT * FROM afazeres ORDER BY titulo DESC");
+                $rs = $con->query("SELECT * FROM afazeres");
                 while($row = $rs->fetch(PDO::FETCH_OBJ)){
-                    echo '<td class="py-2 px-4 text-sm text-gray-700">' . $row->titulo . '</td>
+                    echo '<tbody>
+                    <td class="py-2 px-4 text-sm text-gray-700">' . $row->titulo . '</td>
                     <td class="py-2 px-4 text-sm text-gray-700">' . $row->descricao . '</td>
                     <td class="py-2 px-4 text-sm text-gray-700">' . $row->status . '</td>
-                    <td class="py-2 px-4 text-sm text-gray-700">' . $row->data . '</td>';
+                    <td class="py-2 px-4 text-sm text-gray-700">' . $row->data . '</td>
+                    </tbody>';
                 }
                 ?>
                     <!-- Adicione mais linhas conforme necessário -->
